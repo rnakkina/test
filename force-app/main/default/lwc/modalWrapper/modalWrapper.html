@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Modal Component Demo">
+        <div class="slds-var-m-around_medium">
+        <lightning-button variant="brand" label="open" onclick={openHandler}>
+        </lightning-button>
+        <lightning-button variant="brand" label="open" onclick={opensecondHandler}>
+        </lightning-button>
+        </div>
+    </lightning-card>
+    <template if:true={isOpen}>
+    <c-modal onclose={closeHandler}>
+        <div slot="title">Modal title</div>
+        <p>this is body</p>
+        <div slot="footer">
+            <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+            onclick={closeHandler}
+            >Cancel</button>
+            <button class="slds-button slds-button_brand">Save</button>
+        </div>
+    </c-modal>
+    </template>
+    <template if:true={isOpensecond}>
+        <c-modal onclose={closesecondHandler}>
+            <div slot="title">Modal title 2nd</div>
+            <p>this is body 2nd</p>
+            <div slot="footer">
+                <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                onclick={closesecondHandler}
+                >Cancel</button>
+                <button class="slds-button slds-button_brand">Save</button>
+            </div>
+        </c-modal>
+        </template>
+</template>

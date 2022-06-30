@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="getRelatedListRecords demo">
+        <template if:true={recordList}>
+            <template for:each={recordList} for:item="record">
+                <p key={record.fields.Id.value}>{record.fields.Id.value} - {record.fields.Name.value}</p>
+            </template>
+        </template>
+    </lightning-card>
+</template>

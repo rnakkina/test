@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="getRelatedListsInfo demo">
+        <template if:true={relatedlistsData}>
+            <template for:each={relatedlistsData} for:item="record">
+                <p key={record.label}>{record.label}</p>
+            </template>
+        </template>
+    </lightning-card>
+</template>
